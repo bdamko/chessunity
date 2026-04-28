@@ -4,19 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useTheme } from "./ThemeProvider";
 import { useAuth } from "./AuthProvider";
-import { lovable } from "@/integrations/lovable";
-import { toast } from "sonner";
 
 export function Navbar() {
   const { theme, toggle } = useTheme();
   const { user, profile, signOut } = useAuth();
-
-  const signIn = async () => {
-    const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: window.location.origin,
-    });
-    if (result.error) toast.error("Sign-in failed");
-  };
 
   return (
     <header className="border-b border-border bg-card/60 backdrop-blur sticky top-0 z-40">
@@ -56,7 +47,9 @@ export function Navbar() {
               </Button>
             </div>
           ) : (
-            <Button size="sm" onClick={signIn}>Sign in</Button>
+            <Button size="sm" asChild>
+              <Link to="/auth">Sign in</Link>
+            </Button>
           )}
         </nav>
       </div>
