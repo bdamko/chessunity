@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,7 +23,9 @@ export function ShareMomentDialog({
 
   const post = async () => {
     if (!user) {
-      toast.error("Please sign in to share moments");
+      toast.error("Please sign in to share moments", {
+        action: { label: "Sign in", onClick: () => { window.location.href = "/auth"; } },
+      });
       return;
     }
     setPosting(true);
@@ -51,6 +54,11 @@ export function ShareMomentDialog({
         <div className="flex justify-center">
           <StaticBoard fen={fen} size={260} />
         </div>
+        {!user && (
+          <p className="text-sm text-muted-foreground text-center">
+            <Link to="/auth" className="underline">Sign in</Link> to post to the community feed.
+          </p>
+        )}
         <Textarea
           placeholder="Add a caption…"
           value={caption}
