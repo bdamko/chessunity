@@ -33,14 +33,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Chessunity — Play chess & share moments" },
-      { name: "description", content: "Play chess online or against the computer, then share your best moments with the community." },
+      { title: "Chessunity — Play chess & Build community" },
+      { name: "description", content: "Play chess online with friends and share your best moments with the community." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Chessunity" },
-      { property: "og:description", content: "Play chess and share your best moments." },
+      { property: "og:title", content: "Chessunity — Play chess & Build community" },
+      { property: "og:description", content: "Play chess online with friends and share your best moments with the community." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Chessunity — Play chess & Build community" },
+      { name: "twitter:description", content: "Play chess online with friends and share your best moments with the community." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4b98b1e0-53b9-4ece-a492-379ec64f0769/id-preview-c5a2d58c--4504af05-f291-4655-98ea-3809a74fa13e.lovable.app-1777369759222.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4b98b1e0-53b9-4ece-a492-379ec64f0769/id-preview-c5a2d58c--4504af05-f291-4655-98ea-3809a74fa13e.lovable.app-1777369759222.png" },
     ],
     links: [
       {
